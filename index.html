@@ -29,7 +29,7 @@
   <div class="mobile-nav" id="mobile-nav" aria-hidden="true"><nav aria-label="Mobile navigation"><a href="#experience">Experience</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="https://www.linkedin.com/in/arbab-khan-105a48187" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></nav></div>
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <img class="hero-photo" src="images/Arbab.jpg" alt="Arbab Khan seated at a computer" fetchpriority="high">
+      <img class="hero-photo" src="images/Arbab5.jpg" alt="Arbab Khan looking across the water" fetchpriority="high">
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-main shell">
         <p class="hero-kicker">SOFTWARE ENGINEER <span>·</span> INDORE, INDIA</p>
@@ -57,7 +57,6 @@
             <article><span class="detail-num">03</span><div><h3>Keep services dependable</h3><p>Investigate production bugs, take part in code reviews, and optimize RabbitMQ connections.</p></div></article>
             <article><span class="detail-num">04</span><div><h3>Connect systems</h3><p>Work on integrations involving Klera and Gathr.</p></div></article>
           </div>
-          <p class="experience-footnote">Role dates and project metrics are omitted because they are not confirmed here.</p>
         </div>
       </div>
     </section>
@@ -117,6 +116,17 @@
         overlay.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('menu-open');
       }));
+      const revealTargets = document.querySelectorAll('main > section:not(.hero), .experience-card, .work-card, .skill-row, .credential-grid article, .education-inner > *, .contact-inner > *');
+      revealTargets.forEach((item, index) => {
+        item.classList.add('reveal');
+        if (item.matches('.work-card, .skill-row, .credential-grid article')) item.style.setProperty('--reveal-delay', `${(index % 4) * 75}ms`);
+      });
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+        }), { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+        revealTargets.forEach(item => observer.observe(item));
+      } else revealTargets.forEach(item => item.classList.add('is-visible'));
     })();
   </script>
 </body>
