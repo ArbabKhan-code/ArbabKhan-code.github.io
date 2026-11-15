@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Arbab Khan is a software engineer focused on Java, Spring Boot, APIs, and dependable backend systems.">
-  <meta name="theme-color" content="#101820">
+  <meta name="theme-color" content="#102638">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Arbab Khan — Software Engineer">
   <meta property="og:description" content="Java and Spring Boot software engineer building dependable backend systems.">
@@ -21,12 +21,12 @@
   <header class="site-header">
     <div class="shell nav-wrap">
       <a class="wordmark" href="#top" aria-label="Arbab Khan home">AK<span>.</span></a>
-      <nav class="desktop-nav" aria-label="Main navigation"><a href="#experience">Experience</a><span>,</span><a href="#work">Work</a><span>,</span><a href="#skills">Skills</a></nav>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#experience">Experience</a><span>,</span><a href="#work">Work</a><span>,</span><a href="#moments">Moments</a><span>,</span><a href="#skills">Skills</a></nav>
       <a class="nav-cta" href="https://www.linkedin.com/in/arbab-khan-105a48187" target="_blank" rel="noopener noreferrer">Get in touch <span aria-hidden="true">↗</span></a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </div>
   </header>
-  <div class="mobile-nav" id="mobile-nav" aria-hidden="true"><nav aria-label="Mobile navigation"><a href="#experience">Experience</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="https://www.linkedin.com/in/arbab-khan-105a48187" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></nav></div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true"><nav aria-label="Mobile navigation"><a href="#experience">Experience</a><a href="#work">Work</a><a href="#moments">Moments</a><a href="#skills">Skills</a><a href="https://www.linkedin.com/in/arbab-khan-105a48187" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></nav></div>
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <img class="hero-photo" src="images/Arbab5.jpg" alt="Arbab Khan looking across the water" fetchpriority="high">
@@ -70,9 +70,19 @@
         </div>
       </div>
     </section>
+    <section class="section photo-story" id="moments" aria-labelledby="moments-title">
+      <div class="shell">
+        <div class="section-heading"><div><p class="eyebrow">04 / MOMENTS</p><h2 id="moments-title">A little more<br><em>of the story.</em></h2></div><p class="section-note">A few scenes from my desk and the moments around it</p></div>
+        <div class="photo-grid">
+          <figure class="photo-card photo-card-desk"><img src="images/story/desk-details.jpg" alt="Arbab lettering above a keyboard and notes on a desk" loading="lazy" width="2300" height="1800"><figcaption><span>01</span><span>At the desk</span></figcaption></figure>
+          <figure class="photo-card photo-card-pause"><img src="images/story/airport-pause.jpg" alt="Arbab seated beside a large window" loading="lazy" width="900" height="1200"><figcaption><span>02</span><span>A quiet pause</span></figcaption></figure>
+          <figure class="photo-card photo-card-view"><img src="images/story/airport-view.jpg" alt="Arbab seated by a wide window overlooking the airfield" loading="lazy" width="1200" height="809"><figcaption><span>03</span><span>Between moments</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="shell split skills-split">
-        <div><p class="eyebrow">04 / TOOLKIT</p><h2 id="skills-title">Tools I use<br><em>to make things work.</em></h2></div>
+        <div><p class="eyebrow">05 / TOOLKIT</p><h2 id="skills-title">Tools I use<br><em>to make things work.</em></h2></div>
         <div class="skill-groups">
           <div class="skill-row"><span>LANGUAGES</span><p>Java · Core Java</p></div>
           <div class="skill-row"><span>FRAMEWORKS</span><p>Spring Boot</p></div>
@@ -116,10 +126,10 @@
         overlay.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('menu-open');
       }));
-      const revealTargets = document.querySelectorAll('main > section:not(.hero), .experience-card, .work-card, .skill-row, .credential-grid article, .education-inner > *, .contact-inner > *');
+      const revealTargets = document.querySelectorAll('main > section, .experience-card, .work-card, .skill-row, .credential-grid article, .photo-card, .education-inner > *, .contact-inner > *');
       revealTargets.forEach((item, index) => {
         item.classList.add('reveal');
-        if (item.matches('.work-card, .skill-row, .credential-grid article')) item.style.setProperty('--reveal-delay', `${(index % 4) * 75}ms`);
+        if (item.matches('.work-card, .skill-row, .credential-grid article, .photo-card')) item.style.setProperty('--reveal-delay', `${(index % 4) * 75}ms`);
       });
       if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const observer = new IntersectionObserver(entries => entries.forEach(entry => {
